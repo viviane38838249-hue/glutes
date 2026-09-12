@@ -1,0 +1,91 @@
+MÉTODO GLÚTEOS BRASILEÑOS — Página de Oferta (versão estática)
+================================================================
+
+[ATUALIZAÇÃO - build otimizada para deploy]
+Esta pasta "offer/" deixou de ter cópias próprias de imagens/vídeos.
+Agora ela usa os mesmos arquivos da pasta "../imagens/" (hero.webp ->
+../imagens/logo.webp, os antes-depois -> ../imagens/resultados-X.webp,
+app-mockup.webp -> ../imagens/checkout-1.webp, os 2 vídeos ->
+../imagens/videoframe_1.mp4 e videoframe_2.mp4). Isso elimina ~500KB
+de arquivos duplicados, mas como consequência esta pasta PRECISA ser
+publicada junto com o projeto inteiro (mantendo "imagens/" um nível
+acima) — ela não é mais 100% independente/portátil sozinha. Se algum
+dia precisar subir só a "offer/" em outra hospedagem separada, é só
+copiar a pasta "imagens/" da raiz do projeto para dentro dela e trocar
+"../imagens/" de volta para "assets/" (ou "imagens/") nas referências
+do index.html.
+
+
+O que é isto
+------------
+Esta é a página "/oferta" do seu site original, extraída de dentro do
+bundle React minificado (js/main-7sJshsTJ.js) e reconstruída como um
+site 100% estático: HTML + CSS + JS puro, com Bootstrap 5 (via CDN) no
+lugar do React/Tailwind original.
+
+Funciona sem build, sem Node, sem servidor: é só abrir o index.html ou
+subir a pasta inteira em qualquer hospedagem (Hostinger, Netlify,
+GitHub Pages, cPanel, etc.).
+
+Estrutura
+---------
+index.html      -> a página inteira
+css/style.css   -> todo o visual (gradientes, cards, botões, cores)
+js/script.js    -> contador regressivo, popup de notificação e FAQ
+assets/         -> imagens/vídeos (veja aviso abaixo)
+
+Imagens e vídeos — já incluídos
+--------------------------------
+As fotos e vídeos reais foram adicionadas a partir do arquivo
+coach-luca-2.zip que você enviou. Como os nomes dos arquivos originais
+não batiam com o conteúdo, eu abri cada imagem para conferir e encaixei
+assim:
+
+  assets/hero.webp             <- logo.webp (banner "Desafío Bumbum Sexy")
+  assets/app-mockup.webp       <- checkout-1.webp (mulher com o app no celular)
+  assets/antes-depois-1.webp   <- resultados-1.webp
+  assets/antes-depois-2.webp   <- resultados-2.webp
+  assets/antes-depois-3.webp   <- resultados-3.webp
+  assets/antes-depois-4.webp   <- resultados-4.webp
+  assets/antes-depois-5.webp   <- resultados-5.webp
+  assets/antes-depois-6.webp   <- resultados-6.webp
+  assets/gif-salespage-1.mp4   <- videoframe_1.mp4
+  assets/gif-sales-page-2.mp4  <- videoframe_2.mp4
+
+Pasta extras/ (não usadas nesta página)
+-----------------------------------------
+Estes arquivos também vieram no coach-luca-2.zip mas pertencem a OUTRAS
+etapas do funil (tela do coach, seleção de idade no quiz), não à página
+de oferta — por isso não entraram no index.html, só ficaram guardados
+em extras/ caso você queira usá-los em outra página:
+
+  extras/coach-luca-1.webp, coach-luca-2.webp -> fotos do "coach" (landing/apresentação)
+  extras/idade-1.webp a idade-4.webp          -> imagens de faixa etária do quiz
+  extras/seta.webp                             -> ícone de seta
+
+O que foi mantido fiel ao original
+-----------------------------------
+- Todos os textos, títulos e chamadas da oferta (em espanhol, es-419)
+- Preço "$97 -> $9.90" e a lista de bônus com valores
+- Botão de compra apontando para o checkout real da Hotmart:
+  https://pay.hotmart.com/L105961442G?checkoutMode=10
+- Contador regressivo de 14:59 (reinicia a cada carregamento da página)
+- FAQ com acordeão
+- Barra fixa de CTA no celular
+- Popup de "fulana acabou de entrar" com nome/idade/cidade aleatórios
+
+Uma observação sobre esse popup e o contador
+---------------------------------------------
+Tanto o popup de "compra recente" quanto o contador reiniciam a cada
+visita — ou seja, são simulações de urgência/prova social, não eventos
+reais. Isso já existia assim na página original; deixei o mesmo
+comportamento por fidelidade à extração, mas fica o registro caso você
+quisesse revisar essa prática ao publicar.
+
+Não incluídos (não fazem parte da "página de oferta")
+-------------------------------------------------------
+- js/fbevents.js, js/latest.js, js/player.js, js/smartplayer.js:
+  eram scripts de rastreamento (Meta Pixel, Utmify) e do player de
+  vídeo (VTurb) usados no funil completo de quiz, não na página de
+  oferta em si. Se quiser reativar o Pixel do Facebook ou o Microsoft
+  Clarity nesta página estática, me avise que eu adiciono os snippets.
