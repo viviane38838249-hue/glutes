@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+    <link rel="preload" href="https://scripts.converteai.net/ce2782a2-7689-4998-9f4d-524bb9f49ad0/players/6aa4336e4541f08018249c86/v4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+    <link rel="preload" href="https://cdn.converteai.net/ce2782a2-7689-4998-9f4d-524bb9f49ad0/6aa43364b774ef077af85da3/main.m3u8" as="fetch">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://license.vturb.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="../style.css">
+<title>VSL</title>
+<style>
+  /* Ajustes de proporção e alinhamento — não altera o style.css global, só reforça/organiza este template */
+
+  .vsl-screen{
+    display:flex;
+    min-height:100svh; /* melhor que 100vh em mobile (evita barra do navegador cortando) */
+    box-sizing:border-box;
+  }
+
+  .vsl-screen .container-fluid{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+  }
+
+  .vsl-wrapper{
+    width:100%;
+    max-width:405px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .vsl-badge-wrap{
+    margin-bottom:14px;
+  }
+
+  .vsl-badge{
+    display:inline-block;
+    max-width:100%;
+    white-space:normal;
+    line-height:1.4;
+  }
+
+  .vsl-title-wrap{
+    margin-bottom:10px;
+    width:100%;
+  }
+
+  .vsl-title{
+    margin:0;
+    /* fonte fluida: nunca estoura em telas pequenas, cresce em telas maiores */
+    font-size:clamp(24px, 7vw, 34px);
+    word-wrap:break-word;
+  }
+
+  .vsl-subtitle-wrap{
+    margin-bottom:20px;
+    width:100%;
+    padding:0 8px;
+  }
+
+  .vsl-subtitle{
+    font-size:clamp(13px, 3.6vw, 15px);
+    margin:0 auto;
+    max-width:340px;
+  }
+
+  .vsl-video-card{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  vturb-smartplayer{
+    width:100% !important;
+    max-width:400px !important;
+    margin:0 auto !important;
+  }
+
+  /* Telas bem pequenas (iPhone SE etc.) */
+  @media (max-width:360px){
+    .vsl-video-card{padding:6px;border-radius:16px;}
+    .vsl-title{font-size:22px;}
+  }
+
+  /* Telas maiores (tablet/desktop) — evita que o card fique gigante e desalinhado */
+  @media (min-width:600px){
+    .vsl-wrapper{max-width:460px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="quiz-screen vsl-screen">
+  <div class="container-fluid px-3 py-4">
+    <div class="vsl-wrapper">
+
+      <div class="vsl-badge-wrap">
+        <span class="vsl-badge">🔒 ACCESO EXCLUSIVO CONFIRMADO</span>
+      </div>
+
+      <div class="vsl-title-wrap">
+        <h1 class="vsl-title">
+          ¡FUISTE<br>
+          <span class="vsl-title-highlight">SELECCIONADA!</span>
+        </h1>
+      </div>
+
+      <div class="vsl-subtitle-wrap">
+        <p class="vsl-subtitle">
+          Tu video ha comenzado, míralo y desbloquea el protocolo.
+        </p>
+      </div>
+
+      <div class="vsl-video-card">
+        <vturb-smartplayer id="vid-6aa4336e4541f08018249c86" style="display:block;">
+          <div class="vturb-player-placeholder" style="position:relative;width:100%;padding:125% 0 0;z-index:0;background-color:black;"></div>
+        </vturb-smartplayer>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var s = document.createElement("script");
+  s.src = "https://scripts.converteai.net/ce2782a2-7689-4998-9f4d-524bb9f49ad0/players/6aa4336e4541f08018249c86/v4/player.js";
+  s.async = true;
+  document.head.appendChild(s);
+</script>
+
+</body>
+</html>

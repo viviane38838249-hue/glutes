@@ -22,7 +22,7 @@ function iniciarProcessamento(){window.scrollTo(0,0);const quizAnterior=document
 if(quizTop){quizTop.classList.add('d-none');}
 document.body.style.background='linear-gradient(150deg, #ff5f9e 0%, #e0357e 45%, #b0206b 100%)';document.documentElement.style.background='linear-gradient(150deg, #ff5f9e 0%, #e0357e 45%, #b0206b 100%)';if(themeColor){themeColor.setAttribute('content','#c22a72');}
 if(loadingScreen){loadingScreen.style.display="flex";}
-const etapas=[{icone:"🧠",titulo:"ANALIZANDO TUS RESPUESTAS...",subtitulo:"Procesando tu perfil personalizado"},{icone:"📅",titulo:"PREPARANDO LOS 28 DÍAS...",subtitulo:"Creando tu plan de entrenamiento exclusivo"},{icone:"🎯",titulo:"CALCULANDO TU POTENCIAL...",subtitulo:"Identificando tu objetivo de trasero ideal"},{icone:"📲",titulo:"¡CASI LISTO!",subtitulo:"Preparando tu entrenamiento personalizado"}];const DURACAO_ETAPA=1800;const TOTAL_ETAPAS=etapas.length;function atualizarChecklist(numeroEtapa){checklistItems.forEach(function(item,index){item.classList.remove('is-done','is-active','is-pending');if(index<numeroEtapa){item.classList.add('is-done');}else if(index===numeroEtapa){item.classList.add('is-active');}else{item.classList.add('is-pending');}});}
+const etapas=[{icone:"🧠",titulo:"ANALIZANDO TUS RESPUESTAS...",subtitulo:"Procesando tu perfil personalizado"},{icone:"📅",titulo:"PREPARANDO LOS 28 DÍAS...",subtitulo:"Creando tu plan de entrenamiento exclusivo"},{icone:"🎯",titulo:"CALCULANDO TU POTENCIAL...",subtitulo:"Identificando tu objetivo de trasero ideal"},{icone:"📲",titulo:"¡CASI LISTO!",subtitulo:"Preparando tu entrenamiento personalizado"}];const DURACAO_ETAPA=1200;const TOTAL_ETAPAS=etapas.length;function atualizarChecklist(numeroEtapa){checklistItems.forEach(function(item,index){item.classList.remove('is-done','is-active','is-pending');if(index<numeroEtapa){item.classList.add('is-done');}else if(index===numeroEtapa){item.classList.add('is-active');}else{item.classList.add('is-pending');}});}
 function trocarConteudo(etapa){if(loadingContentBlock){loadingContentBlock.classList.remove('loading-content-in');}
 if(loadingContentBlock){void loadingContentBlock.offsetWidth;}
 if(loadingIcon){loadingIcon.textContent=etapa.icone;}
@@ -38,7 +38,7 @@ requestAnimationFrame(animarProgresso);}
 function finalizarProcessamento(){if(progressBar){progressBar.style.width="100%";}
 atualizarChecklist(TOTAL_ETAPAS);setTimeout(function(){if(loadingScreen){loadingScreen.style.display="none";}
 document.body.style.background='';document.documentElement.style.background='';if(themeColor){themeColor.setAttribute('content','#FFFFFF');}
-showQuestion(16);if(typeof enviarLeadAlServidor==='function'){enviarLeadAlServidor(true);}},700);}
+window.location.href = '/vsl';if(typeof enviarLeadAlServidor==='function'){enviarLeadAlServidor(true);}},700);}
 executarEtapa(0);}
 function validarCampo(idCampo,numeroAvanco){const campo=document.getElementById(idCampo);if(!campo)return false;if(campo.value.trim()===''){tremer(campo);campo.focus();return false;}
 showQuestion(numeroAvanco);return true;}
